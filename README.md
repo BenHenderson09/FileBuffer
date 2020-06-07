@@ -18,8 +18,8 @@ to work with this buffer in a more intuitive manner.
  The `include` directory contains the header and the `lib` directory contains the library.
 
 ## Usage
-The constructor accepts a c-string or an `std::string` which holds the location of the file to be loaded into
-the buffer.
+The constructor of the `FileBuffer` class accepts a c-string or an `std::string` which
+holds the location of the file to be loaded into the buffer.
 
 To retrieve a byte at a specfic index, the subscript operator (square brackets, [])
 is overloaded as such: `uint8_t operator[](long byteIndex) const;`
