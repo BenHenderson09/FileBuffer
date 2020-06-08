@@ -25,3 +25,6 @@ To retrieve a byte at a specfic index, the subscript operator (square brackets, 
 is overloaded as such: `uint8_t operator[](long byteIndex) const;`
 
 To get the size of the file use the following method: `long getFileSizeInBytes() const;`
+
+To copy the internal buffer (dynamically allocated `uint8_t*`) use the following method:
+`void copyBufferContentsToAnotherBuffer(uint8_t*& otherBuffer, long sizeOfOtherBuffer) const;`
