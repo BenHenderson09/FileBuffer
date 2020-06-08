@@ -44,3 +44,13 @@ uint8_t FileBuffer::operator[](long byteIndex) const {
 long FileBuffer::getFileSizeInBytes() const {
     return fileSizeInBytes;
 }
+
+void FileBuffer::copyBufferContentsToAnotherBuffer(uint8_t*& otherBuffer, long sizeOfOtherBuffer) const {
+    if (sizeOfOtherBuffer < fileSizeInBytes){
+        throw std::runtime_error("Provided buffer is not large enough to hold the file contents.");
+    }
+
+    for (long byteIndex{0}; byteIndex < fileSizeInBytes; byteIndex++){
+        otherBuffer[byteIndex] = heapBasedBuffer[byteIndex];
+    }
+}

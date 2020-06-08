@@ -13,6 +13,7 @@ class FileBuffer {
         uint8_t operator[](long byteIndex) const;
 
         long getFileSizeInBytes() const;
+        void copyBufferContentsToAnotherBuffer(uint8_t*& otherBuffer, long sizeOfOtherBuffer) const;
 
     private:
         uint8_t* heapBasedBuffer;
