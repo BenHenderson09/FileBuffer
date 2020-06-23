@@ -12,10 +12,7 @@ to work with this buffer in a more intuitive manner.
  Carry out the following instructions. Run as root.
  1. `git clone https://github.com/BenHenderson09/FileBuffer`
  2. `mkdir -p FileBuffer/build && cd FileBuffer/build`
- 3. `cmake .. && make`
- 
- This will leave you with an `include` and a `lib` directory inside the `build` directory.
- The `include` directory contains the header and the `lib` directory contains the library.
+ 3. `cmake .. && make install`
 
 ## Usage
 The constructor of the `FileBuffer` class accepts a c-string or an `std::string` which
