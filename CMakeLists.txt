@@ -8,11 +8,15 @@ set(SOURCE_FILES
     src/FileBuffer.cpp
     src/getFileSize/getFileSize.cpp)
 
-# Create the static library
-add_library(FileBuffer STATIC ${SOURCE_FILES})
+# Setup header files
+set(HEADER_FILES
+    src/FileBuffer.hpp)
 
-# Pack the header and library into "lib" and "include" directories
-add_custom_command(TARGET FileBuffer POST_BUILD COMMAND
-    mkdir include lib &&
-    cp ../src/FileBuffer.hpp include/FileBuffer.hpp &&
-    mv libFileBuffer.a lib)
+# Create the shared library
+add_library(FileBuffer SHARED ${SOURCE_FILES})
+
+# Install library
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
+
+# Install library headers
+install(FILES ${HEADER_FILES} DESTINATION include/${PROJECT_NAME})
